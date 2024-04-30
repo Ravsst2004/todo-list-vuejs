@@ -1,12 +1,15 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 
 // Tailwind css
-import './assets/css/index.css'
+import "./assets/css/index.css";
 
-const app = createApp(App)
+// Font awesome
+// import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+app.use(router);
+
+app.mount("#app");
