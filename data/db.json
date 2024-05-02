@@ -1,0 +1,14 @@
+{
+  "lists": [
+    {
+      "id": 1,
+      "title": "Belajar HTML",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "title": "Belajar PHP",
+      "status": 0
+    }
+  ]
+}
