@@ -3,11 +3,13 @@
     {
       "id": 1,
       "title": "Belajar HTML",
+      "created_at": "2022-12-12",
       "status": 1
     },
     {
       "id": 2,
       "title": "Belajar PHP",
+      "created_at": "2023-12-12",
       "status": 0
     }
   ]

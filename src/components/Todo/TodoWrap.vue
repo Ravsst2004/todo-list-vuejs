@@ -4,20 +4,20 @@
   <div
     v-for="(list, index) in lists"
     :key="index"
-    class="flex items-center justify-between mt-10 group"
+    class="flex items-center justify-between mt-10 group cursor-pointer"
   >
     <div>
       <i v-if="list.status == 0" class="fa-regular fa-square"></i>
-      <i
-        v-else
-        class="fa-regular fa-square-check"
-        :class="{ 'line-through': list.status == 1 }"
-      ></i>
+      <i v-else class="fa-regular fa-square-check"></i>
     </div>
-    <p class="px-6 text-justify group-hover:text-white">
+    <p
+      @click="detailTask(list.id)"
+      class="px-6 text-justify group-hover:text-white"
+      :class="{ 'line-through': list.status == 1 }"
+    >
       {{ list.title }}
     </p>
-    <i class="fa-solid fa-trash cursor-pointer hover:text-red-600"></i>
+    <i class="fa-solid fa-trash hover:text-red-600"></i>
   </div>
 </template>
 
@@ -25,6 +25,11 @@
 export default {
   props: {
     lists: Array,
+  },
+  methods: {
+    detailTask(id) {
+      this.$router.push({ path: `/detail/${id}` });
+    },
   },
 };
 </script>

@@ -19,6 +19,11 @@ const router = createRouter({
       name: "available",
       component: () => import("../views/AvailableView.vue"),
     },
+    {
+      path: "/detail/:id",
+      name: "detail",
+      component: () => import("../views/Task/DetailView.vue"),
+    },
   ],
 });
 
