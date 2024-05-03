@@ -7,8 +7,16 @@
     class="flex items-center justify-between mt-10 group cursor-pointer"
   >
     <div>
-      <i v-if="list.status == 0" class="fa-regular fa-square"></i>
-      <i v-else class="fa-regular fa-square-check"></i>
+      <i
+        v-if="list.status == 0"
+        @click="checkTask(list.id, list)"
+        class="fa-regular fa-square"
+      ></i>
+      <i
+        v-else
+        @click="checkTask(list.id, list)"
+        class="fa-regular fa-square-check"
+      ></i>
     </div>
     <p
       @click="detailTask(list.id)"
@@ -23,12 +31,22 @@
 
 <script>
 export default {
+  emits: ["reloadData"],
   props: {
     lists: Array,
   },
   methods: {
     detailTask(id) {
       this.$router.push({ path: `/detail/${id}` });
+    },
+    async checkTask(id, task) {
+      const res = await this.axios.put(`http://localhost:8000/lists/${id}`, {
+        title: task.title,
+        created_at: task.created_at,
+        status: task.status == 0 ? 1 : 0,
+      });
+
+      this.$emit("reloadData");
     },
   },
 };

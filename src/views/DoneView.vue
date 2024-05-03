@@ -7,7 +7,7 @@ import Footer from "@/components/Footer.vue";
 <template>
   <div class="bg-blue-400 mt-4 px-6">
     <Form />
-    <TodoWrap :lists="lists" />
+    <TodoWrap :lists="lists" @reloadData="getData" />
     <Footer />
   </div>
 </template>
