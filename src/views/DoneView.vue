@@ -6,7 +6,7 @@ import Footer from "@/components/Footer.vue";
 
 <template>
   <div class="bg-blue-400 mt-4 px-6">
-    <Form />
+    <Form @reloadData="getData" />
     <TodoWrap :lists="lists" @reloadData="getData" />
     <Footer />
   </div>
@@ -27,7 +27,9 @@ export default {
   methods: {
     async getData() {
       try {
-        const res = await this.axios.get("http://localhost:8000/lists?status=1");
+        const res = await this.axios.get(
+          "http://localhost:8000/lists?status=1"
+        );
         this.lists = res.data;
       } catch (error) {
         console.log(error);

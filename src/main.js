@@ -9,6 +9,9 @@ import VueAxios from "vue-axios";
 // Tailwind css
 import "./assets/css/index.css";
 
+// Dayjs
+import dayjs from "dayjs";
+
 // Font awesome
 // import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -17,4 +20,5 @@ const app = createApp(App);
 app.use(VueAxios, axios);
 app.use(router);
 
+app.config.globalProperties.$dayjs = dayjs;
 app.mount("#app");
