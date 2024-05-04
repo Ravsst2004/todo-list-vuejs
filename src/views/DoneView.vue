@@ -8,7 +8,7 @@ import Footer from "@/components/Footer.vue";
   <div class="bg-blue-400 mt-4 px-6">
     <Form @reloadData="getData" />
     <TodoWrap :lists="lists" @reloadData="getData" />
-    <Footer />
+    <Footer :lists="lists" :text="text" @reloadData="getData"/>
   </div>
 </template>
 
@@ -17,6 +17,7 @@ export default {
   data() {
     return {
       lists: [],
+      text: "Done"
     };
   },
 
