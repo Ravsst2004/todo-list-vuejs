@@ -25,7 +25,10 @@
     >
       {{ list.title }}
     </p>
-    <i class="fa-solid fa-trash hover:text-red-600"></i>
+    <i
+      @click="deleteTask(list.id)"
+      class="fa-solid fa-trash hover:text-red-600"
+    ></i>
   </div>
 </template>
 
@@ -46,6 +49,11 @@ export default {
         status: task.status == 0 ? 1 : 0,
       });
 
+      this.$emit("reloadData");
+    },
+
+    async deleteTask(id) {
+      const res = await this.axios.delete(`http://localhost:8000/lists/${id}`);
       this.$emit("reloadData");
     },
   },
