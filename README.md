@@ -1,5 +1,19 @@
 # todo-app-vue
 
+Simple Todo List Web using Vuejs. Use Some Library like Axios, Day.js, Json Server.
+
+First Run the project
+```
+npm run dev
+```
+
+Then run the fake json db server
+```
+npx json-server --watch data/db.json --port 8000
+```
+
+
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
