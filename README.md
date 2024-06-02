@@ -2,7 +2,12 @@
 
 Simple Todo List Web using Vuejs. Use Some Library like Axios, Day.js, Json Server.
 
-First Run the project
+Need install Vite first
+```
+npm install vite
+```
+
+Run the project
 ```
 npm run dev
 ```
