@@ -6,6 +6,7 @@
         type="text"
         name="title"
         class="w-full rounded-md px-2"
+        required
       />
       <button class="border-2 px-2 rounded-md bg-white hover:bg-blue-400">
         Submit

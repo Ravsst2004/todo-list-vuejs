@@ -1,23 +1,16 @@
 <template>
   <nav
-    class="flex justify-center items-center gap-x-6 p-4 bg-blue-400 text-white font-semibold"
+    class="flex justify-center items-center gap-x-6 text-white font-semibold"
   >
-    <RouterLink
-      to="/"
-      :class="{ underline: $route.path === '/' }"
-      class="hover:underline"
+    <RouterLink to="/" :class="{ 'hover:text-[#FF870C]': $route.path === '/' }"
       >Todo</RouterLink
     >
-    <RouterLink
-      to="/done"
-      :class="{ underline: $route.path === '/done' }"
-      class="hover:underline"
+    <RouterLink to="/done" :class="{ 'hover:text-[#FF870C]': $route.path === '/done' }"
       >Done Task</RouterLink
     >
     <RouterLink
       to="/available"
-      :class="{ underline: $route.path === '/available' }"
-      class="hover:underline"
+      :class="{ 'hover:text-[#FF870C]': $route.path === '/available' }"
       >Available Task</RouterLink
     >
   </nav>
